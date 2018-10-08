@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/sc_unit_x2">
+
+        <LinearLayout
+            android:id="@+id/description_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/description_icon_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sc_unit_x2"
+                android:layout_marginStart="@dimen/sc_unit_x2"
+                android:layout_marginTop="@dimen/sc_unit_x2"
+                android:contentDescription="@string/description_icon"
+                android:src="@drawable/ic_info_outline_black_24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/description_label_tv"
+                    style="@style/Theme.Sandwichclub.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/sc_unit_x2"
+                    android:layout_marginRight="@dimen/sc_unit_x2"
+                    android:layout_marginLeft="@dimen/sc_unit_x3"
+                    android:layout_marginStart="@dimen/sc_unit_x3"
+                    android:layout_marginTop="@dimen/sc_unit_x2"
+                    android:text="@string/detail_description_label" />
+
+                <TextView
+                    android:id="@+id/description_tv"
+                    style="@style/Theme.Sandwichclub.Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/sc_unit_x2"
+                    android:layout_marginEnd="@dimen/sc_unit_x2"
+                    android:layout_marginLeft="@dimen/sc_unit_x3"
+                    android:layout_marginRight="@dimen/sc_unit_x2"
+                    android:layout_marginStart="@dimen/sc_unit_x3"
+                    android:layout_marginTop="@dimen/sc_unit_x1"
+                    tools:text="Sandwich Description" />
+
+                <View
+                    android:id="@+id/description_div"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="@dimen/sc_unit_x2"
+                    android:layout_marginStart="@dimen/sc_unit_x2"
+                    android:background="#10000000" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/origin_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/origin_icon_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sc_unit_x2"
+                android:layout_marginStart="@dimen/sc_unit_x2"
+                android:layout_marginTop="@dimen/sc_unit_x2"
+                android:contentDescription="@string/origin_icon"
+                android:src="@drawable/ic_location_black_24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/origin_label_tv"
+                    style="@style/Theme.Sandwichclub.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/sc_unit_x2"
+                    android:layout_marginLeft="@dimen/sc_unit_x3"
+                    android:layout_marginRight="@dimen/sc_unit_x2"
+                    android:layout_marginStart="@dimen/sc_unit_x3"
+                    android:layout_marginTop="@dimen/sc_unit_x2"
+                    android:text="@string/detail_place_of_origin_label" />
+
+                <TextView
+                    android:id="@+id/origin_tv"
+                    style="@style/Theme.Sandwichclub.Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/sc_unit_x2"
+                    android:layout_marginEnd="@dimen/sc_unit_x2"
+                    android:layout_marginLeft="@dimen/sc_unit_x3"
+                    android:layout_marginRight="@dimen/sc_unit_x2"
+                    android:layout_marginStart="@dimen/sc_unit_x3"
+                    android:layout_marginTop="@dimen/sc_unit_x1"
+                    tools:text="Place of Origin Description" />
+
+                <View
+                    android:id="@+id/origin_div"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/sc_unit_x3"
+                    android:layout_marginStart="@dimen/sc_unit_x3"
+                    android:background="#10000000" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ingredients_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ingredients_icon_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sc_unit_x2"
+                android:layout_marginStart="@dimen/sc_unit_x2"
+                android:layout_marginTop="@dimen/sc_unit_x2"
+                android:contentDescription="@string/ingredients_icon"
+                android:src="@drawable/ic_local_dining_black_24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/ingredients_label_tv"
+                    style="@style/Theme.Sandwichclub.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/sc_unit_x2"
+                    android:layout_marginLeft="@dimen/sc_unit_x3"
+                    android:layout_marginRight="@dimen/sc_unit_x2"
+                    android:layout_marginStart="@dimen/sc_unit_x3"
+                    android:layout_marginTop="@dimen/sc_unit_x2"
+                    android:text="@string/detail_ingredients_label" />
+
+                <TextView
+                    android:id="@+id/ingredients_tv"
+                    style="@style/Theme.Sandwichclub.Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/sc_unit_x2"
+                    android:layout_marginEnd="@dimen/sc_unit_x2"
+                    android:layout_marginLeft="@dimen/sc_unit_x3"
+                    android:layout_marginRight="@dimen/sc_unit_x2"
+                    android:layout_marginStart="@dimen/sc_unit_x3"
+                    android:layout_marginTop="@dimen/sc_unit_x1"
+                    tools:text="Ingredients Description" />
+
+                <View
+                    android:id="@+id/ingredients_div"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/sc_unit_x3"
+                    android:layout_marginStart="@dimen/sc_unit_x3"
+                    android:background="#10000000" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/also_know_as_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/also_know_as_icon_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sc_unit_x2"
+                android:layout_marginStart="@dimen/sc_unit_x2"
+                android:layout_marginTop="@dimen/sc_unit_x2"
+                android:contentDescription="@string/also_know_as_icon"
+                android:src="@drawable/ic_label_black_24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/also_know_as_label_tv"
+                    style="@style/Theme.Sandwichclub.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/sc_unit_x2"
+                    android:layout_marginLeft="@dimen/sc_unit_x3"
+                    android:layout_marginRight="@dimen/sc_unit_x2"
+                    android:layout_marginStart="@dimen/sc_unit_x3"
+                    android:layout_marginTop="@dimen/sc_unit_x2"
+                    android:text="@string/detail_also_known_as_label" />
+
+                <TextView
+                    android:id="@+id/also_known_as_tv"
+                    style="@style/Theme.Sandwichclub.Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/sc_unit_x2"
+                    android:layout_marginEnd="@dimen/sc_unit_x2"
+                    android:layout_marginLeft="@dimen/sc_unit_x3"
+                    android:layout_marginRight="@dimen/sc_unit_x2"
+                    android:layout_marginStart="@dimen/sc_unit_x3"
+                    android:layout_marginTop="@dimen/sc_unit_x1"
+                    tools:text="Also known as Description" />
+
+                <View
+                    android:id="@+id/also_known_as_div"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/sc_unit_x3"
+                    android:layout_marginStart="@dimen/sc_unit_x3"
+                    android:background="#10000000" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
+
