@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_X3">
+
+            <TextView
+                android:id="@+id/tv_overview_label"
+                style="@style/TextAppearance.PopularMovies.Subhead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_X1"
+                android:text="@string/overview_label" />
+
+            <TextView
+                android:id="@+id/tv_detail_overview"
+                style="@style/TextAppearance.PopularMovies.Body.Dark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_X2"
+                android:text="@string/dummy_text" />
+
+            <TextView
+                android:id="@+id/tv_original_title_label"
+                style="@style/TextAppearance.PopularMovies.Subhead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_X1"
+                android:text="@string/original_title_label" />
+
+            <TextView
+                android:id="@+id/tv_detail_original_title"
+                style="@style/TextAppearance.PopularMovies.Body.Dark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_X2"
+                android:text="@string/dummy_text" />
+
+            <TextView
+                android:id="@+id/tv_releaseDate_label"
+                style="@style/TextAppearance.PopularMovies.Subhead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_X1"
+                android:text="@string/release_date_label" />
+
+            <TextView
+                android:id="@+id/tv_detail_release_date"
+                style="@style/TextAppearance.PopularMovies.Body.Dark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_X2"
+                android:text="@string/movie_release_date_placeholder" />
+
+            <TextView
+                android:id="@+id/tv_language_label"
+                style="@style/TextAppearance.PopularMovies.Subhead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_X1"
+                android:text="@string/movie_language_label" />
+
+            <TextView
+                android:id="@+id/tv_detail_language"
+                style="@style/TextAppearance.PopularMovies.Body.Dark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/language_placeholder" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_similar_movies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_similar_movies_label"
+                style="@style/TextAppearance.PopularMovies.Subhead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/spacing_X2"
+                android:paddingLeft="@dimen/spacing_X3"
+                android:paddingRight="@dimen/spacing_X3"
+                android:paddingTop="@dimen/spacing_X2"
+                android:text="@string/similar_movies_label" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_movie_detail_images"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_X2"
+                android:maxHeight="220dp"
+                tools:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                tools:listitem="@layout/list_item_image_card"
+                tools:orientation="horizontal"
+                tools:spanCount="1" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</android.support.v4.widget.NestedScrollView>
