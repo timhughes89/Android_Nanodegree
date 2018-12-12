@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base Colors -->
+    <color name="colorPrimary">#424242</color>
+    <color name="colorPrimaryDark">#212121</color>
+    <color name="colorAccent">#00ffe7</color>
+    <color name="colorAccentAlt">#6200EE</color>
+
+    <!--6200EE-->
+
+    <color name="colorControlHighlight">@color/colorAccentTranslucent</color>
+    <color name="colorAccentTranslucent">#2000ffe7</color>
+
+    <!-- Text Colors -->
+    <color name="textColorTitle">@android:color/white</color>
+    <color name="textColorBodyDark">#60ffffff</color>
+    <color name="textColorBodyLight">#60ffffff</color>
+
+    <!-- Widget/Component Colour -->
+    <color name="dividerColor">#10ffffff</color>
+
+    <color name="viewBg">#f1f5f8</color>
+
+</resources>
