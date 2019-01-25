@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
-
 import com.timsimonhughes.popularmovies_p2.R;
 import com.timsimonhughes.popularmovies_p2.model.Movie;
 import com.timsimonhughes.popularmovies_p2.ui.OnItemClickListener;

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="recipe_image_fallbacks">
+        <item name="nutella_pie">https://assets.epicurious.com/photos/54ac95e819925f464b3ac37e/master/pass/51229210_nutella-pie_1x1.jpg</item>
+        <item name="brownies">https://sparkpeo.hs.llnwd.net/e1/resize/630m620/e2/guid/High-Fiber-Brownies-/6f00a998-c311-42d6-bb0d-ce1d8429a653.jpg</item>
+        <item name="yellow_cake">https://divascancook.com/wp-content/uploads/2018/08/yellow-cake-recipe.jpg</item>
+        <item name="cheesecake">https://du7ybees82p4m.cloudfront.net/59843bf6737d64.06857640.jpg?width=910&amp;height=512</item>
+    </string-array>
+</resources>

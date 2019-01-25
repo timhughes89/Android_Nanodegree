@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main Theme Colors -->
+    <color name="colorPrimary">#EFC5DD</color>
+    <color name="colorPrimaryDark">#DF9FC4</color>
+    <color name="colorAccent">#7CD1E5</color>
+
+    <!-- Indicator Colors -->
+    <color name="colorIndicatorActive">@android:color/white</color>
+    <color name="colorIndicatorInactive">#60FFFFFF</color>
+
+    <color name="colorControlHighlight">@color/colorAccentTranslucent</color>
+    <color name="colorAccentTranslucent">#607CD1E5</color>
+
+    <!-- Text Colors -->
+    <color name="colorTextPrimaryDark">#80000000</color>
+    <color name="colorTextSecondaryDark">#60000000</color>
+    <color name="colorTextPrimaryLight">#80FFFFFF</color>
+    <color name="colorTextSecondaryLight">#60FFFFFF</color>
+
+</resources>

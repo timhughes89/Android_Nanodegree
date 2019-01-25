@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager_frag_detail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/frag_recipe_step" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="top"
+            android:background="#20000000" />
+
+        <ImageButton
+            android:id="@+id/ib_previous"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center|start"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="0dp"
+            android:src="@drawable/ic_keyboard_arrow_left"
+            android:contentDescription="@string/content_description_previous_button" />
+
+        <com.rd.PageIndicatorView
+            android:id="@+id/pageIndicatorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="0dp"
+            app:piv_animationType="scale"
+            app:piv_dynamicCount="true"
+            app:piv_interactiveAnimation="true"
+            app:piv_radius="4dp"
+            app:piv_selectedColor="@color/colorIndicatorActive"
+            app:piv_unselectedColor="@color/colorIndicatorInactive"
+            app:piv_viewPager="@id/view_pager_frag_detail" />
+
+        <ImageButton
+            android:id="@+id/ib_next"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="end|center"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="0dp"
+            android:src="@drawable/ic_keyboard_arrow_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/view_pager_frag_detail"
+            android:contentDescription="@string/content_description_next_button" />
+
+    </FrameLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Bake</string>
+
+    <string name="transitionName">transition</string>
+    <string name="action_next">Next</string>
+    <string name="action_previous">Previous</string>
+
+    <string name="recipe_description_label">Description</string>
+    <string name="recipe_short_description_label">Short Description</string>
+    <string name="recipe_image_content_description">Recipe Image</string>
+
+    <string name="content_desc_recipe_image">Recipe Image</string>
+    <string name="no_recipe_selected_label">No recipe selected, please select a recipe!</string>
+    <string name="widget_placeholder_label">No recipe selected, click to start baking!</string>
+
+    <string name="cd_clear_recipe">Clear Recipe</string>
+    <string name="content_description_next_button">Next Button</string>
+    <string name="content_description_previous_button">Previous Button</string>
+
+</resources>

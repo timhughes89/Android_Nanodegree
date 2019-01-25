@@ -1,0 +1,32 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="selectableItemBackground">@drawable/selectable_item_background</item>
+        <item name="android:selectableItemBackground">@drawable/selectable_item_background</item>
+    </style>
+
+    <style name="Bake.TextAppearance.Headline" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="Bake.TextAppearance.Title" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorTextPrimaryDark</item>
+    </style>
+
+    <style name="Bake.TextAppearance.Body" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/colorTextSecondaryDark</item>
+    </style>
+
+    <style name="Bake.TextAppearance.Body.Centre" parent="Bake.TextAppearance.Body">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/colorTextPrimaryDark</item>
+    </style>
+
+</resources>
