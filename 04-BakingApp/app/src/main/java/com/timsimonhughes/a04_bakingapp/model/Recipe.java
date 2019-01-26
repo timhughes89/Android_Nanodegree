@@ -3,14 +3,22 @@ package com.timsimonhughes.a04_bakingapp.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class Recipe implements Parcelable {
+    @SerializedName("id")
     private int mId;
+    @SerializedName("name")
     private String mName;
+    @SerializedName("ingredients")
     private List<Ingredient> mIngredients;
+    @SerializedName("steps")
     private List<Step> mSteps;
+    @SerializedName("servings")
     private int mServings;
+    @SerializedName("image")
     private String mImage;
 
     public Recipe(int id, String name, List<Ingredient> ingredients, List<Step> steps, int servings, String image) {

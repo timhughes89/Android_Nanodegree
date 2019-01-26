@@ -3,6 +3,7 @@ package com.timsimonhughes.a04_bakingapp.controller.fragments;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,31 +11,45 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.timsimonhughes.a04_bakingapp.network.RecipeApiConfig;
+import com.timsimonhughes.a04_bakingapp.network.RecipeApiService;
 import com.timsimonhughes.a04_bakingapp.ui.OnItemClickListener;
 import com.timsimonhughes.a04_bakingapp.R;
 import com.timsimonhughes.a04_bakingapp.controller.MainActivity;
 import com.timsimonhughes.a04_bakingapp.controller.adapters.RecipeListAdapter;
 import com.timsimonhughes.a04_bakingapp.model.Recipe;
 import com.timsimonhughes.a04_bakingapp.utils.Constants;
-import com.timsimonhughes.a04_bakingapp.utils.JsonUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.Call;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class ListFragment extends Fragment implements OnItemClickListener {
 
     private static final String TAG = ListFragment.class.getSimpleName();
-
 
     private View mView;
     private List<String> mRecipes = new ArrayList<>();
     private List<Recipe> mRecipesList = new ArrayList<>();
 
-    public ListFragment() {}
+    private Snackbar errorSnackbar;
+
+    private RecipeListAdapter mAdapter;
+    private RecyclerView mRecyclerView;
+    private ProgressBar progressBar;
+
+    public ListFragment() {
+    }
 
     public static ListFragment newInstance() {
         return new ListFragment();
@@ -45,25 +60,26 @@ public class ListFragment extends Fragment implements OnItemClickListener {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
 
-        String recipeJson = getJsonFromAssets();
-        mRecipes = JsonUtils.getJsonRecipesListFromAssets(recipeJson);
-
-        for (int i = 0; i < mRecipes.size(); i++) {
-            Recipe recipe = JsonUtils.parseBakingJsonFromAssets(mRecipes.get(i));
-            mRecipesList.add(recipe);
-        }
+//        String recipeJson = getJsonFromAssets();
+//        mRecipes = JsonUtils.getJsonRecipesListFromAssets(recipeJson);
+//
+//        for (int i = 0; i < mRecipes.size(); i++) {
+//            Recipe recipe = JsonUtils.parseBakingJsonFromAssets(mRecipes.get(i));
+//            mRecipesList.add(recipe);
+//        }
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.frag_recipe_list, container, false);
+
         initViews();
+        requestData();
         return mView;
     }
 
     private void initViews() {
-
         MainActivity mainActivity = (MainActivity) getActivity();
 
         if (mainActivity != null) {
@@ -73,19 +89,40 @@ public class ListFragment extends Fragment implements OnItemClickListener {
             toolbar.setTitleTextColor(getResources().getColor(android.R.color.white));
             toolbar.setNavigationIcon(null);
 
-//            Animation toolbarTitleAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.slide_in_right);
-//            toolbarTitle.setAnimation(toolbarTitleAnimation);
-//            toolbarTitleAnimation.start();
+            progressBar = mainActivity.progressBar;
+            progressBar.setVisibility(View.VISIBLE);
         }
 
-        RecyclerView recyclerView = (RecyclerView) mView.findViewById(R.id.rv_recipe_list);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        mRecyclerView = (RecyclerView) mView.findViewById(R.id.rv_recipe_list);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        RecipeListAdapter recipeListAdapter = new RecipeListAdapter(getContext(), this);
-        recyclerView.setAdapter(recipeListAdapter);
-        recipeListAdapter.setOnItemClickListener(this);
-        recipeListAdapter.setRecipeList(mRecipesList);
+        mAdapter = new RecipeListAdapter(getContext(), this);
+        mAdapter.setOnItemClickListener(this);
+    }
 
+    private void requestData() {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(RecipeApiConfig.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        RecipeApiService recipeApiService = retrofit.create(RecipeApiService.class);
+        Call<List<Recipe>> recipeCall = recipeApiService.getAllRecipes();
+        recipeCall.enqueue(new Callback<List<Recipe>>() {
+            @Override
+            public void onResponse(Call<List<Recipe>> call, Response<List<Recipe>> response) {
+                mRecipesList = response.body();
+                mRecyclerView.setAdapter(mAdapter);
+                mAdapter.setRecipeList(mRecipesList);
+                progressBar.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onFailure(Call<List<Recipe>> call, Throwable t) {
+                showErrorSnackbar();
+            }
+        });
     }
 
     @Override
@@ -122,6 +159,18 @@ public class ListFragment extends Fragment implements OnItemClickListener {
         }
     }
 
+
+    private void showErrorSnackbar() {
+        errorSnackbar = Snackbar.make(mRecyclerView, R.string.error_text, Snackbar.LENGTH_SHORT);
+        errorSnackbar.show();
+    }
+
+    private void hideErrorSnackbar() {
+        if (errorSnackbar != null) {
+            errorSnackbar.dismiss();
+        }
+    }
+
     private String getJsonFromAssets() {
         String recipeJson = null;
         try {
@@ -141,4 +190,6 @@ public class ListFragment extends Fragment implements OnItemClickListener {
 
         return recipeJson;
     }
+
+
 }

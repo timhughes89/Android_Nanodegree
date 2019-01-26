@@ -16,5 +16,6 @@
     <string name="cd_clear_recipe">Clear Recipe</string>
     <string name="content_description_next_button">Next Button</string>
     <string name="content_description_previous_button">Previous Button</string>
+    <string name="error_text">Connection error, please check your internet connection and try again.</string>
 
 </resources>

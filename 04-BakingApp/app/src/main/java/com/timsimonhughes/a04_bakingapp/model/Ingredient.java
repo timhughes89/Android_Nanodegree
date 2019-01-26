@@ -3,10 +3,16 @@ package com.timsimonhughes.a04_bakingapp.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Ingredient implements Parcelable {
 
+
+    @SerializedName("quantity")
     private double mQuantity;
+    @SerializedName("measure")
     private String mMeasure;
+    @SerializedName("ingredient")
     private String mIngredients;
 
     public Ingredient(double quantity, String measure, String ingredients) {

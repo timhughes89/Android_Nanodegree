@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.timsimonhughes.a04_bakingapp.R;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     public TextView mToolbarTitle;
     public Fragment mFragment;
     public boolean isTablet;
+    public ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         mAppBarLayout = findViewById(R.id.appBarLayout);
         mToolbar = findViewById(R.id.toolbar);
         mToolbarTitle = findViewById(R.id.toolbarTitle);
+        progressBar = findViewById(R.id.pb_recipe_list);
 
         isTablet = isTablet();
 
